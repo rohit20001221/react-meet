@@ -1,0 +1,43 @@
+.home {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  background-image: url("./assets/home/background_home.png");
+}
+
+.home__createRoom {
+  flex: 0.5;
+  display: flex;
+  justify-content: center;
+}
+
+.home__createRoom > .MuiButton-root {
+  padding: 15px !important;
+  outline: none !important;
+  border: none !important;
+  background-color: #2980b9 !important;
+}
+
+.home__joinRoom {
+  flex: 0.5;
+  display: flex;
+  justify-content: center;
+}
+
+.home__joinRoom > form > .MuiButton-root {
+  padding: 15px !important;
+  outline: none !important;
+  border: none !important;
+  background-color: #8e44ad !important;
+}
+
+.home__joinRoom > form {
+  display: flex;
+  flex-direction: column;
+}
+
+.home__joinRoom > form > input {
+  padding: 20px;
+  margin-bottom: 3px;
+  outline: none;
+}
