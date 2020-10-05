@@ -43,7 +43,6 @@ function Room() {
           stream.getTracks().forEach((track) => {
             track.stop();
           });
-
           history.replace("/");
         });
 
@@ -63,6 +62,9 @@ function Room() {
         socketRef.current.on("msg", (msg) => {
           console.log("message");
           setMessages([...messages, msg]);
+        });
+        socketRef.current.on("user-disconnected", (id) => {
+          deleteUser(id);
         });
         socketRef.current.on("all users", (users) => {
           const peers = [];
@@ -134,6 +136,14 @@ function Room() {
     socketRef.current.emit("message", message.current.value);
     setMessages([...messages, message.current.value]);
     message.current.value = "";
+  };
+
+  const deleteUser = (userID) => {
+    peersRef.current = peersRef.current.filter((item) => {
+      return item.peerID !== userID;
+    });
+
+    setPeers(peersRef.current);
   };
 
   return (
