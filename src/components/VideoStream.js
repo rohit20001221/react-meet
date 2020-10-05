@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import "./VideoStream.css";
 
-function VideoStream({ peer, muted }) {
+function VideoStream({ peer }) {
   const ref = useRef();
 
   useEffect(() => {
@@ -13,7 +13,7 @@ function VideoStream({ peer, muted }) {
 
   return (
     <div className="videostream col-6">
-      <video autoPlay muted={muted ? true : false} ref={ref}></video>
+      <video autoPlay ref={ref}></video>
     </div>
   );
 }
