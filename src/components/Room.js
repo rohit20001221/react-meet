@@ -160,7 +160,7 @@ function Room() {
   }, [history, roomID]);
 
   const sendMessage = () => {
-    socket.emit("message", message.current.value);
+    socket.current.emit("message", message.current.value);
     setMessages([...messages, message.current.value]);
     message.current.value = "";
   };
