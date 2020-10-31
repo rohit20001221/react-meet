@@ -149,7 +149,7 @@ function Room() {
         });
       });
 
-    socket.on("receive-message", (message_) => {
+    socket.current.on("receive-message", (message_) => {
       setMessages((oldMessages) => [...oldMessages, message_]);
     });
 
